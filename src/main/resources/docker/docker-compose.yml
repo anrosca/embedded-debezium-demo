@@ -1,0 +1,14 @@
+---
+version: '2'
+services:
+  cpt-operational-db:
+    image: postgres
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: embedded-debezium-demo
+    ports:
+      - 5432:5432
